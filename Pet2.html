@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+<title>Pikachu's emotions</title>
+<script> 
+var counter = 0;
+var feed = 1;
+var sleep = 0;
+var pain = 0;
+var love = 0;
+var start = 0;
+var myS = setInterval(myTimes, 30000);
+var myH = setInterval(myTimeh, 15000);
+function myFunction() {
+
+
+
+    if(counter == 0){
+        document.getElementById("imgClickAndChange").src = "angry.jpeg";
+        counter++;
+    }
+    else if(counter == 1){
+        document.getElementById("imgClickAndChange").src = "glad.jpeg";
+        counter++;
+    }
+else if(counter == 2){
+        document.getElementById("imgClickAndChange").src = "concerned.jpeg";
+        counter++;
+    }
+else if(counter == 3){
+        document.getElementById("imgClickAndChange").src = "crying.jpeg";
+        counter++;
+    }
+else if(counter == 4){
+        document.getElementById("imgClickAndChange").src = "dizzy.jpeg";
+        counter++;
+    }
+else if(counter == 5){
+        document.getElementById("imgClickAndChange").src = "focused.jpeg";
+        counter++;
+    }
+else if(counter == 6){
+        document.getElementById("imgClickAndChange").src = "happy.jpeg";
+        counter++;
+    }
+else if(counter == 7){
+        document.getElementById("imgClickAndChange").src = "hungry.jpeg";
+        counter++;
+    }
+else if(counter == 8){
+        document.getElementById("imgClickAndChange").src = "interested.jpeg";
+        counter++;
+    }
+else if(counter == 9){
+        document.getElementById("imgClickAndChange").src = "nervous.jpeg";
+        counter++;
+    }
+else if(counter == 10){
+        document.getElementById("imgClickAndChange").src = "pain.jpeg";
+        counter++;
+    }
+else if(counter == 11){
+        document.getElementById("imgClickAndChange").src = "shocked.jpeg";
+        counter++;
+    }
+else if(counter == 12){
+        document.getElementById("imgClickAndChange").src = "skeptical.jpeg";
+        counter++;
+    }
+else if(counter == 13){
+        document.getElementById("imgClickAndChange").src = "sleepy.jpeg";
+        counter++;
+    }
+    else if(counter == 14){
+        document.getElementById("imgClickAndChange").src = "teary.jpeg";
+        counter = 0;
+    }
+};
+function feedEmo() {
+
+    if(feed == 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "relaxed.jpeg";
+        feed++;
+    }
+    else if(feed < 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "hungry.jpeg";
+        feed++;
+    }
+else if(feed > 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "happy.jpeg";
+        pain++;
+    }
+};
+function punchEmo() {
+
+    if(pain == 0 && start == 1){
+        document.getElementById("imgClickAndChange").src = "relaxed.jpeg";
+        pain++;
+    }
+    else if(pain < 0 && start == 1){
+        document.getElementById("imgClickAndChange").src = "happy.jpeg";
+        pain++;
+    }
+else if(pain == 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "shocked.jpeg";
+        pain++;
+    }
+else if(pain == 2 && start == 1){
+        document.getElementById("imgClickAndChange").src = "teary.jpeg";
+        pain++;
+    }
+else if(pain == 3 && start == 1){
+        document.getElementById("imgClickAndChange").src = "crying.jpeg";
+        pain++;
+    }
+else if(pain > 3 && start == 1){
+        document.getElementById("imgClickAndChange").src = "angry.jpeg";
+        pain++;
+    }
+else if(sleep == 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "shocked.jpeg";
+        sleep == 0;
+	pain == 2;
+
+    }
+};
+function giveLove() {
+
+if(pain == 0 && start == 1){
+        document.getElementById("imgClickAndChange").src = "relaxed.jpeg";
+         pain--;
+    }
+    else if(pain < 0 && start == 1){
+        document.getElementById("imgClickAndChange").src = "happy.jpeg";
+       pain--;  
+    }
+else if(pain == 1 && start == 1){
+        document.getElementById("imgClickAndChange").src = "shocked.jpeg";
+        pain--; 
+    }
+else if(pain == 2 && start == 1){
+        document.getElementById("imgClickAndChange").src = "teary.jpeg";
+         pain--;
+    }
+else if(pain == 3 && start == 1){
+        document.getElementById("imgClickAndChange").src = "crying.jpeg";
+         pain--;
+    }
+else if(pain > 3 && start == 1){
+        document.getElementById("imgClickAndChange").src = "angry.jpeg";
+         pain--;
+    }
+};
+function startCycle() {
+start = 1;
+};
+
+
+function myTimes() {
+    sleep = 1;
+    document.getElementById("imgClickAndChange").src = "sleepy.jpeg";
+    sleep = 1;
+};
+function myTimeh() {
+   feed = 0;
+    document.getElementById("imgClickAndChange").src = "hungry.jpeg";
+    feed = 0
+};
+
+</script>
+
+
+
+
+</head>
+<body bgcolor="black" text="white" link="#ccddff" align="center">
+<h1><BIG><b><font size=7>Your Pikachu Pet</font></b></BIG></h1>
+<h3>Directions</h3>
+<p><align="left">Congrats, you have paid my virtual pet shop $2139.75 for your new virtual pikachu. Be careful its a weird one because it only eats snickers
+To interact with pikachu you need to press "Start" but if you wait to long it might go to sleep on you or demand food. The other buttons shows the actions 
+you can do to your pikachu. There is also a "New Emotion" where you can force your pikachu to display a random emotion. Why you would use the option is my guess.
+At the bottom of the site you will see all of the different emotion your pikachu displays and what they mean. Have fun and remember your pikachu's death is not a 
+valid reason to return the products. Simply because all sales are FINAL</align></p>
+ </br></br></br></br>
+
+<img src="relaxed.jpeg" id="imgClickAndChange" style="width:400px;height:400px;">
+
+
+</br>
+<button onclick="startCycle()">Start</button>
+<button onclick="myFunction()">New Emotion</button>
+<button onclick="feedEmo()">Give it a Snickers Bar</button>
+<button onclick="punchEmo()">Slap it</button>
+<button onclick="giveLove()">Pet it</button>
+ </br></br></br></br>
+
+
+<img src="hungry.jpeg">
+Your pikachu is hungry
+<img src="sleepy.jpeg">
+Your pikachu is sleepy
+<img src="angry.jpeg">
+Your pikachu is angry
+<img src="crying.jpeg">
+Your pikachu is crying
+<img src="teary.jpeg">
+Your pikachu is teary
+<img src="shocked.jpeg">
+Your pikachu is shocked
+<img src="happy.jpeg">
+Your pikachu is happy
+<img src="relaxed.jpeg">
+Your pikachu is relaxed
